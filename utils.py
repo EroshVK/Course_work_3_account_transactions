@@ -32,7 +32,7 @@ def last_executed_operations(executed_operations):
     :return: последние 5 операций со статусом 'EXECUTED'
     """
     sort_operations = sorted(executed_operations, key=lambda x: x["date"], reverse=True)
-    return sort_operations
+    return sort_operations[:5]
 
 def hide_digits(account):
     """
