@@ -8,7 +8,7 @@ def test_select_by_state():
 
 def test_last_executed_operations():
     assert utils.last_executed_operations([{"date": "2019-08-26T10:50:58.294041"}, {"date": "2019-07-03T18:35:29.512364"}, {"date": "2018-06-30T02:08:58.425572"}]) == \
-                                          [{"date": "2018-06-30T02:08:58.425572"}, {"date": "2019-07-03T18:35:29.512364"}, {"date": "2019-08-26T10:50:58.294041"}]
+                                          [{"date": "2019-08-26T10:50:58.294041"}, {"date": "2019-07-03T18:35:29.512364"}, {"date": "2018-06-30T02:08:58.425572"}]
 
 def test_hide_digits():
     assert utils.hide_digits("Счет 75106830613657916952") == "Счет **6952"
