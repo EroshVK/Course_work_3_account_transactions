@@ -18,7 +18,9 @@ def test_hide_digits():
 def test_output():
     assert utils.output([{"date": "2019-08-26T10:50:58.294041", "description": "Перевод организации",
                           "from": "Maestro 1596837868705199", "to": "Счет 64686473678894779589",
-                          "operationAmount": {"amount": "31957.58","currency": {"name": "руб."}}}]) == None
+                          "operationAmount": {"amount": "31957.58","currency": {"name": "руб."}}}]) == \
+                          ["26.08.2019 Перевод организации\nMaestro 1596 83** **** 5199 -> Счет **9589\n31957.58 руб.\n"]
     assert utils.output([{"date": "2019-08-26T10:50:58.294041", "description": "Перевод организации",
                           "to": "Счет 64686473678894779589",
-                          "operationAmount": {"amount": "31957.58","currency": {"name": "руб."}}}]) == None
+                          "operationAmount": {"amount": "31957.58","currency": {"name": "руб."}}}]) == \
+                          ["26.08.2019 Перевод организации\n -> Счет **9589\n31957.58 руб.\n"]
