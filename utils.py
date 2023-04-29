@@ -53,12 +53,14 @@ def output(last_operations):
     :param last_operations: 5 последних операций
     :return: выводит 5 последних операций в соответствии с примером
     """
+    string_list = []
     for item in last_operations:
         date = datetime.strptime(item['date'][:10], '%Y-%m-%d')
         try:
             from_operations = hide_digits(item['from'])
         except KeyError:
             from_operations = ''
-        print(f"""{date} {item['description']}
+        string_list.append(f"""{date} {item['description']}
 {from_operations} -> {hide_digits(item['to'])}
 {item['operationAmount']['amount']} {item['operationAmount']['currency']['name']}\n""")
+    return string_list
